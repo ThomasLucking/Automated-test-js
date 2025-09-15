@@ -13,7 +13,7 @@ const randomRGB = () => {
   const s = 255
   return `rgba(${o(r() * s)},${o(r() * s)},${o(r() * s)})`
 }
-let enteringColor = ''
+const enteringColor = ''
 
 /**
  * On the page, you have an input with the id "focus-me".
