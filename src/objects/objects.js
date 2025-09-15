@@ -40,12 +40,11 @@ export function accessPropertiesInObjects(object) {
 export function iteratesThroughObjectValuesAndProperties(object) {
   // Write your code here
   const newObject = {
-    keys: Object.keys(object).map(key => key.toUpperCase()),
-    values: Object.values(object).map(value => value.toLowerCase())
-  };
+    keys: Object.keys(object).map((key) => key.toUpperCase()),
+    values: Object.values(object).map((value) => value.toLowerCase()),
+  }
 
   return newObject
-
 }
 
 /**
@@ -54,7 +53,26 @@ export function iteratesThroughObjectValuesAndProperties(object) {
  * @return {{younger: string, older: string}}
  */
 export function retrieveMaximumMinimumUserAges(users) {
-  // Write your code here
+  const ages = users.map((user) => user.age)
+  // vise versa
+  const youngest = Math.min(...ages)
+  // the oldest is Math.max in the array for example if the array had 30 and 40 it would choose 40
+  const oldest = Math.max(...ages)
+  
+  const youngestperson = users
+    .filter((user) => user.age === youngest) // .filter() keeps all users with age === youngest
+    .map((user) => user.name) // .map() extracts their names
+  
+  const oldestperson = users
+    .filter((user) => user.age === oldest) // .filter() keeps all users with age === youngest
+    .map((user) => user.name) // .map() extracts their names
+
+  return {
+    // this takes the first youngest person it finds
+    younger: youngestperson[0],
+    // this takes the last oldest person it finds in the index.
+    older: oldestperson[oldestperson.length - 1],
+  }
 }
 
 /**
