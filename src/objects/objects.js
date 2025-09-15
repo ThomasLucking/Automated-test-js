@@ -5,7 +5,7 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#objects
  */
 
-import { arrayBuffer } from 'stream/consumers'
+import { arrayBuffer, json } from 'stream/consumers'
 
 /**
  * @return {Object} you should return a new object containing two properties, first_name and last_name.
@@ -58,11 +58,11 @@ export function retrieveMaximumMinimumUserAges(users) {
   const youngest = Math.min(...ages)
   // the oldest is Math.max in the array for example if the array had 30 and 40 it would choose 40
   const oldest = Math.max(...ages)
-  
+
   const youngestperson = users
     .filter((user) => user.age === youngest) // .filter() keeps all users with age === youngest
     .map((user) => user.name) // .map() extracts their names
-  
+
   const oldestperson = users
     .filter((user) => user.age === oldest) // .filter() keeps all users with age === youngest
     .map((user) => user.name) // .map() extracts their names
@@ -82,7 +82,8 @@ export function retrieveMaximumMinimumUserAges(users) {
  * @return {Object} An object retried by parsing the string
  */
 export function parseJavaScriptObjectNotation(string) {
-  // Write your code here
+  // Converts a JSON-formatted string into a JavaScript object.
+  return JSON.parse(string)
 }
 
 /**
@@ -90,5 +91,6 @@ export function parseJavaScriptObjectNotation(string) {
  * @return {string} An string representing the given object
  */
 export function stringifyJavaScriptObjectNotation(object) {
-  // Write your code here
+  // Converts a JavaScript object into a JSON-formatted string.
+  return JSON.stringify(object)
 }
