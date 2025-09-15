@@ -29,5 +29,14 @@ export function isBiggerThan2(n) {
  */
 export function isMult(n, m) {
   // Write your code here
-  
+  if (
+    typeof n !== 'number' ||
+    typeof m !== 'number' ||
+    Number.isNaN(n) ||
+    Number.isNaN(m)
+  ) {
+    throw new Error('Invalid input')
+  }
+
+  return n % m === 0
 }
