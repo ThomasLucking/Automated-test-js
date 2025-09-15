@@ -4,7 +4,7 @@
  */
 export function splitAllStringsByWordAndFilterEmptyOnes(array) {
   // Write your code here
-  // .filter(word => word !== "");
+  
   // flatmap basically flattens and turn the new array map created into 1 array
   const cleanedarray = array.flatMap( str => str.split(" ").filter(word => word))
   return cleanedarray
@@ -35,4 +35,10 @@ export function replaceElementsInArrayAtAGivenPlace(
   ...newElements
 ) {
   // Write your code here
+  const slicedindex = array.slice(0, index)
+  const newelement = [...newElements]
+  const insertnewelement = array.slice(index + newElements.length)
+  return slicedindex.concat(newelement, insertnewelement)
+
+
 }
