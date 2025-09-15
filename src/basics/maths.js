@@ -1,4 +1,5 @@
 import { randomInt } from 'crypto'
+import { type } from 'os'
 
 /**
  * @param {number} diameter
@@ -9,10 +10,9 @@ export function computeSphereVolume(diameter) {
   // if (typeof n !== 'number' || Number.isNaN(n)) {
   if (typeof diameter !== 'number' || Number.isNaN(diameter) || diameter < 0) {
     throw new TypeError('Invalid input')
-  }else{
-    const radius = diameter / 2
-    return (4 / 3) * Math.PI * radius ** 3
   }
+  const radius = diameter / 2
+  return (4 / 3) * Math.PI * radius ** 3
 }
 
 /**
@@ -21,12 +21,10 @@ export function computeSphereVolume(diameter) {
  */
 export function roundNumberToOneDecimals(n) {
   // Write your code here
-  if(typeof n !== 'number' || Number.isNaN(n)){
+  if (typeof n !== 'number' || Number.isNaN(n)) {
     throw new TypeError('Invalid input')
-  }else{
-    return Math.round(n * 10) / 10
   }
-
+  return Math.round(n * 10) / 10
 }
 
 /**
@@ -35,6 +33,17 @@ export function roundNumberToOneDecimals(n) {
  */
 export function computeAverage(grades) {
   // Write your code here
+  if (!Array.isArray(grades)) {
+    throw new TypeError('Not an array')
+  }
+  for (const value of grades) {
+    if (typeof value !== 'number' || Number.isNaN(value)) {
+      throw new TypeError('Invalid input')
+    }
+  }
+  const sum = grades.reduce((acc, sum) => acc + sum, 0)
+  const average = sum / grades.length
+  return average
 }
 
 /**
