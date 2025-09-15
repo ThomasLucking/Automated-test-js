@@ -4,6 +4,11 @@
  */
 export function splitAllStringsByWordAndFilterEmptyOnes(array) {
   // Write your code here
+  // .filter(word => word !== "");
+  // flatmap basically flattens and turn the new array map created into 1 array
+  const cleanedarray = array.flatMap( str => str.split(" ").filter(word => word))
+  return cleanedarray
+
 }
 
 /**
