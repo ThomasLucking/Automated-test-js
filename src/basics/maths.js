@@ -1,9 +1,18 @@
+import { randomInt } from 'crypto'
+
 /**
  * @param {number} diameter
  * @return {number} sphere volume
  */
 export function computeSphereVolume(diameter) {
   // Write your code here
+  // if (typeof n !== 'number' || Number.isNaN(n)) {
+  if (typeof diameter !== 'number' || Number.isNaN(diameter) || diameter < 0) {
+    throw new TypeError('Invalid input')
+  }else{
+    const radius = diameter / 2
+    return (4 / 3) * Math.PI * radius ** 3
+  }
 }
 
 /**
