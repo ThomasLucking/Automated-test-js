@@ -15,7 +15,7 @@ export function findAndReplacePreservingCase(needle, haystack, newWord) {
   ) {
     throw new TypeError('Invalid input')
   }
-  const regex = new RegExp(needle, 'gi')
+  const regex = new RegExp(needle, 'gi') // creates a new regex with need and the global and case-insensitive 
   // this processes each match found in the regex.
   return haystack.replaceAll(regex, (match) => {
     let answer = '' // a variable to store the result
