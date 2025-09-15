@@ -5,7 +5,7 @@
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#objects
  */
 
-import { arrayBuffer } from "stream/consumers";
+import { arrayBuffer } from 'stream/consumers'
 
 /**
  * @return {Object} you should return a new object containing two properties, first_name and last_name.
@@ -14,8 +14,8 @@ import { arrayBuffer } from "stream/consumers";
 export function crateUserObject() {
   // Write your code here
   const object = {
-    first_name: "Toto",
-    last_name: "Tutu"
+    first_name: 'Toto',
+    last_name: 'Tutu',
   }
   return object
 }
@@ -27,8 +27,7 @@ export function crateUserObject() {
  */
 export function accessPropertiesInObjects(object) {
   // Write your code here
-  return `${object.first_name} ${object.last_name}`;
-
+  return `${object.first_name} ${object.last_name}`
 }
 
 /**
@@ -40,11 +39,13 @@ export function accessPropertiesInObjects(object) {
  */
 export function iteratesThroughObjectValuesAndProperties(object) {
   // Write your code here
-  // const array = Object.entries(array)
+  const newObject = {
+    keys: Object.keys(object).map(key => key.toUpperCase()),
+    values: Object.values(object).map(value => value.toLowerCase())
+  };
 
-  // arrayroman.forEach(([key, value]) => {
+  return newObject
 
-  // })
 }
 
 /**
