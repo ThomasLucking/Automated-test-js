@@ -15,7 +15,7 @@ export function splitAllStringsByWordAndFilterEmptyOnes(array) {
 export function concatenateArrays(array1, array2) {
   // Write your code here
   const concantedarrays = array1.concat(array2)
-  return concantedarrays;
+  return concantedarrays
 }
 
 /**
