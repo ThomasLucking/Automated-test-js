@@ -7,6 +7,16 @@
  */
 export function factorial(n) {
   // Write your code here
+  if (typeof n !== 'number' || Number.isNaN(n) || n < 0 || typeof n === 'undefined' || n == null || !Number.isInteger(n)) {
+    throw new Error('Invalid input')
+  } else {
+    if(n === 0 || n === 1){
+      return 1;
+    }
+    return n * factorial(n - 1) // for example 5 * 5 -1 which 5 * 4
+  }
+  
+
 }
 
 /**
@@ -18,4 +28,33 @@ export function factorial(n) {
  */
 export function fibonacci(n) {
   // Write your code here
+  /*if (typeof n !== 'number' || Number.isNaN(n) || n < 0 || typeof n === 'undefined' || n == null || !Number.isInteger(n)) {
+    throw new Error('Invalid input')
+  } else {
+    if(n == 0 || n === 1){
+      return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+  }*/
 }
+/*
+The fibonacci sequence
+fibonacci(5)
+ ├─ fibonacci(4)
+ │   ├─ fibonacci(3)
+ │   │   ├─ fibonacci(2) = 1
+ │   │   └─ fibonacci(1) = 1
+ │   │   → total = 2
+ │   └─ fibonacci(2)
+ │       ├─ fibonacci(1) = 1
+ │       └─ fibonacci(0) = 0
+ │       → total = 1
+ │   → total = 3
+ └─ fibonacci(3)
+     ├─ fibonacci(2) = 1
+     └─ fibonacci(1) = 1
+     → total = 2
+→ FINAL = 3 + 2 = 5
+
+*/
