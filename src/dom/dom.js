@@ -26,8 +26,8 @@ export function addElementsInDOM() {
   const toto = document.createElement('p')
   toto.textContent = 'Toto'
 
-  div.before(bonjour)
-  div.after(toto)
+  div.append(bonjour)
+  div.append(toto)
 }
 
 /**

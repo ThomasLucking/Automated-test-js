@@ -7,11 +7,11 @@ export function displayInputContentInAlertOnEnterKey() {
   // Write your code here
   const input = document.querySelector('#write-some-text')
 
-  document.addEventListener('keydown', function (event) {
-    if(event.key === "Enter"){
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
       alert(input.value)
     }
-  });
+  })
 }
 
 /**
@@ -20,7 +20,16 @@ export function displayInputContentInAlertOnEnterKey() {
  * the text should be added to a list of elements with id "list".
  */
 export function addElementsInListOnEnterKey() {
+  const input2 = document.querySelector('#list-input')
+  const listcount = document.querySelector('list')
   // Write your code here
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      const listItem = document.createElement('li')
+      listItem.textContent += input2.value
+      list.append(listItem)
+    }
+  })
 }
 
 /**

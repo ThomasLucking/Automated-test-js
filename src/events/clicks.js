@@ -7,8 +7,8 @@ export function reactToClickEvent() {
   // Write your code here
   const button = document.querySelector('#click-me')
 
-  button.addEventListener('click', () =>{
-     alert("Button clicked")
+  button.addEventListener('click', () => {
+    alert('Button clicked')
   })
 }
 
@@ -21,7 +21,7 @@ export function addEventToDomOnClick() {
   const button = document.querySelector('#click-me')
   button.addEventListener('click', () => {
     const div = document.createElement('div')
-    document.body.append(div);
-    div.textContent = "clicked"
+    document.body.append(div)
+    div.textContent = 'clicked'
   })
 }
