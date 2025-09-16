@@ -13,7 +13,7 @@ export function factorial(n) {
     if(n === 0 || n === 1){
       return 1;
     }
-    return n * factorial(n - 1) // for example 5 * 5 -1 which 5 * 4
+    return n * factorial(n - 1) // for example 5 * 5 -1 which 5 * 4 etc..
   }
   
 
@@ -28,7 +28,7 @@ export function factorial(n) {
  */
 export function fibonacci(n) {
   // Write your code here
-  /*if (typeof n !== 'number' || Number.isNaN(n) || n < 0 || typeof n === 'undefined' || n == null || !Number.isInteger(n)) {
+  if (typeof n !== 'number' || Number.isNaN(n) || n < 0 || typeof n === 'undefined' || n == null || !Number.isInteger(n)) {
     throw new Error('Invalid input')
   } else {
     if(n == 0 || n === 1){
@@ -36,7 +36,7 @@ export function fibonacci(n) {
     }
     return fibonacci(n - 1) + fibonacci(n - 2)
 
-  }*/
+  }
 }
 /*
 The fibonacci sequence
