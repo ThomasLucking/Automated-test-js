@@ -5,6 +5,13 @@
  */
 export function displayInputContentInAlertOnEnterKey() {
   // Write your code here
+  const input = document.querySelector('#write-some-text')
+
+  document.addEventListener('keydown', function (event) {
+    if(event.key === "Enter"){
+      alert(input.value)
+    }
+  });
 }
 
 /**
