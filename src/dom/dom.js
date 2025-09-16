@@ -9,7 +9,7 @@
  */
 export function getElementFromDomAndChangeColorToRed() {
   // Write your code here
-  const element = document.getElementById('change-my-color')
+  const element = document.querySelector('#change-my-color')
   element.style.color = 'red'
 
 }
@@ -20,6 +20,15 @@ export function getElementFromDomAndChangeColorToRed() {
  */
 export function addElementsInDOM() {
   // Write your code here
+  const div = document.querySelector('#add-your-elements-in-this-element')
+
+  const bonjour = document.createElement("p")
+  bonjour.textContent = "Bonjour"
+  const toto = document.createElement("p")
+  toto.textContent = "Toto"
+
+  div.before(bonjour)
+  div.after(toto)
 }
 
 /**
@@ -30,4 +39,5 @@ export function addElementsInDOM() {
  */
 export function addAListInDomFromAnArrayOfObjects(listElements) {
   // Write your code here
+  const htmllist = "t"
 }
