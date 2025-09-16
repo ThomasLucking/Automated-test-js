@@ -9,6 +9,9 @@
  */
 export function getElementFromDomAndChangeColorToRed() {
   // Write your code here
+  const element = document.getElementById('change-my-color')
+  element.style.color = 'red'
+
 }
 
 /**
