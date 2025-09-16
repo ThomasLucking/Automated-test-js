@@ -9,7 +9,7 @@ export function displayInputContentInAlertOnEnterKey() {
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-      alert(input.value)
+      // alert(input.value)
     }
   })
 }
@@ -21,13 +21,27 @@ export function displayInputContentInAlertOnEnterKey() {
  */
 export function addElementsInListOnEnterKey() {
   const input2 = document.querySelector('#list-input')
-  const listcount = document.querySelector('list')
+  const listcount = document.querySelector('#list')
   // Write your code here
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
+      if(event.target.value === ''){
+        return;
+      }else{
+        const listItem = document.createElement('li')
+        listItem.textContent += event.target.value;
+        listcount.append(listItem)
+        event.target.value = '';
+      }
+      
+    }
+  })
+  input2.addEventListener('blur', (event) => {
+    if (event.target.tagName === 'INPUT') {
       const listItem = document.createElement('li')
-      listItem.textContent += input2.value
-      list.append(listItem)
+      listItem.textContent += event.target.value;
+      listcount.append(listItem)
+      event.target.value = '';
     }
   })
 }
@@ -38,4 +52,5 @@ export function addElementsInListOnEnterKey() {
  */
 export function removeElementsFromListWhenClicked() {
   // Write your code here
+
 }
