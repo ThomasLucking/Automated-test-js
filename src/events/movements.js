@@ -5,6 +5,13 @@
  */
 export function mouseMovements() {
   // Write your code here
+  const paragraph = document.querySelector('#mouse-coordinates')
+
+  document.addEventListener('mousemove', (event) => {
+    // clientX, pageX, screenX
+    paragraph.textContent = `x: ${event.clientX}, y: ${event.clientY}`
+    paragraph.append(paragraph)
+  })
 }
 
 const randomRGB = () => {

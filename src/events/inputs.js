@@ -25,23 +25,21 @@ export function addElementsInListOnEnterKey() {
   // Write your code here
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-      if(event.target.value === ''){
-        return;
-      }else{
-        const listItem = document.createElement('li')
-        listItem.textContent = event.target.value;
-        listcount.append(listItem)
-        event.target.value = '';
+      if (event.target.value === '') {
+        return
       }
-      
+      const listItem = document.createElement('li')
+      listItem.textContent = event.target.value
+      listcount.append(listItem)
+      event.target.value = ''
     }
   })
   input2.addEventListener('blur', (event) => {
     if (event.target.tagName === 'INPUT' && event.target.value !== '') {
       const listItem = document.createElement('li')
-      listItem.textContent = event.target.value;
+      listItem.textContent = event.target.value
       listcount.append(listItem)
-      event.target.value = '';
+      event.target.value = ''
     }
   })
 }
@@ -55,7 +53,6 @@ export function removeElementsFromListWhenClicked() {
   const list3element = document.querySelector('#list')
 
   list3element.addEventListener('click', (event) => {
-    list3element.textContent = '';
-  });
-
+    list3element.textContent = ''
+  })
 }
