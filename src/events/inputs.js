@@ -9,7 +9,7 @@ export function displayInputContentInAlertOnEnterKey() {
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-      // alert(input.value)
+      alert(input.value)
     }
   })
 }
@@ -29,7 +29,7 @@ export function addElementsInListOnEnterKey() {
         return;
       }else{
         const listItem = document.createElement('li')
-        listItem.textContent += event.target.value;
+        listItem.textContent = event.target.value;
         listcount.append(listItem)
         event.target.value = '';
       }
@@ -37,9 +37,9 @@ export function addElementsInListOnEnterKey() {
     }
   })
   input2.addEventListener('blur', (event) => {
-    if (event.target.tagName === 'INPUT') {
+    if (event.target.tagName === 'INPUT' && event.target.value !== '') {
       const listItem = document.createElement('li')
-      listItem.textContent += event.target.value;
+      listItem.textContent = event.target.value;
       listcount.append(listItem)
       event.target.value = '';
     }
@@ -52,5 +52,10 @@ export function addElementsInListOnEnterKey() {
  */
 export function removeElementsFromListWhenClicked() {
   // Write your code here
+  const list3element = document.querySelector('#list')
+
+  list3element.addEventListener('click', (event) => {
+    list3element.textContent = '';
+  });
 
 }
