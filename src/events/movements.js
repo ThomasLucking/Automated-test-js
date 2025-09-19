@@ -33,16 +33,55 @@ const enteringColor = ''
  */
 export function hoverFocusAndBlur() {
   // Write your code here
+  const input = document.querySelector('#focus-me')
+  const label = document.querySelector('label[for="focus-me"]')
+  const origincolor = getComputedStyle(input).borderColor
+  const usedColors = new Set([origincolor])
+  const originalLabelText = label.textContent
+
+  input.addEventListener('mouseover', () => {
+    label.textContent = 'Yes, you hover me !'
+  })
+  input.addEventListener('mouseleave', () => {
+    label.textContent = originalLabelText
+  })
+  input.addEventListener('focus', () => {
+    let newColor
+    do {
+      newColor = randomRGB()
+    } while (usedColors.has(newColor))
+    usedColors.add(newColor)
+    input.style.borderColor = newColor
+  })
+  input.addEventListener('blur', () => {
+    input.style.borderColor = origincolor
+  })
 }
 
-/**
- * On the same input from the previous exercise, you need to add a new behavior :
- * Now, each new letter on the input should randomly change the default color of the input border.
- * You don't need to change the current border color, which is controlled by the previous exercise,
- * but you need to change the original color, the one that will be applied when the
- * precedent exercise will lose focus of the field.
- * Take the opportunity to also apply this colour to the text of the 2 input labels.
- */
 export function changesOnInputEvents() {
-  // Write your code here
+  const input = document.querySelector('#focus-me')
+  const defaultColor = 'rgb(100, 149, 237)'
+  let currentDefaultColor = defaultColor 
+
+
+  input.style.borderColor = currentDefaultColor
+
+  const labels = document.querySelectorAll('label')
+  labels.forEach((label) => {
+    label.style.color = currentDefaultColor
+  })
+
+  input.addEventListener('input', () => {
+    const newDefaultColor = randomRGB()
+    currentDefaultColor = newDefaultColor 
+
+    labels.forEach((label) => {
+      label.style.color = newDefaultColor
+    })
+  })
+
+  input.addEventListener('blur', () => {
+    input.style.borderColor = currentDefaultColor
+  })
 }
+
