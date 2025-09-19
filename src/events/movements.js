@@ -34,17 +34,22 @@ const enteringColor = ''
 export function hoverFocusAndBlur() {
   // Write your code here
   const input = document.querySelector('#focus-me')
-  const label = document.querySelector('label[for="focus-me"]')
+  const label = document.querySelectorAll('label[for="focus-me"]')
   const origincolor = getComputedStyle(input).borderColor
   const usedColors = new Set([origincolor])
-  const originalLabelText = label.textContent
+  const originalLabelText = Array.from(label).map(labelscontent => labelscontent.textContent);
 
   input.addEventListener('mouseover', () => {
-    label.textContent = 'Yes, you hover me !'
+    label.forEach(labelscontent => {
+      labelscontent.textContent = 'Yes, you hover me !'
+    })
   })
   input.addEventListener('mouseleave', () => {
-    label.textContent = originalLabelText
+    label.forEach((labelscontent, index) => {
+      labelscontent.textContent = originalLabelText[index];
+    });
   })
+
   input.addEventListener('focus', () => {
     let newColor
     do {
@@ -62,6 +67,7 @@ export function changesOnInputEvents() {
   const input = document.querySelector('#focus-me')
   const defaultColor = 'rgb(100, 149, 237)'
   let currentDefaultColor = defaultColor
+
 
   input.style.borderColor = currentDefaultColor
 
@@ -83,3 +89,4 @@ export function changesOnInputEvents() {
     input.style.borderColor = currentDefaultColor
   })
 }
+

@@ -15,6 +15,7 @@ export function findAndReplacePreservingCase(needle, haystack, newWord) {
   ) {
     throw new TypeError('Invalid input')
   }
+  // RegExp is a dynmic and variable based paterns and // is for fixed paterns
   const regex = new RegExp(needle, 'gi') // creates a new regex with need and the global and case-insensitive
   // this processes each match found in the regex.
   return haystack.replaceAll(regex, (match) => {

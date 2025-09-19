@@ -35,9 +35,9 @@ export function replaceElementsInArrayAtAGivenPlace(
   index,
   ...newElements
 ) {
+  // TODO: remplacer par splice
   // Write your code here
-  const slicedindex = array.slice(0, index)
-  const newelement = [...newElements]
-  const insertnewelement = array.slice(index + newElements.length)
-  return slicedindex.concat(newelement, insertnewelement)
+  return array.toSpliced(index, newElements.length, ...newElements)
 }
+
+

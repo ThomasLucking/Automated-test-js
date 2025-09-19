@@ -41,7 +41,7 @@ export function computeAverage(grades) {
       throw new TypeError('Invalid input')
     }
   }
-  const sum = grades.reduce((acc, sum) => acc + sum, 0)
+  const sum = grades.reduce((acc, current) => acc + current, 0)
   const average = sum / grades.length
   return average
 }
@@ -51,16 +51,6 @@ export function computeAverage(grades) {
  * @return {number} rounded average to 1 decimal
  */
 export function roundedAverage(grades) {
-  // Write your code here
-  if (!Array.isArray(grades)) {
-    throw new TypeError('Not an array')
-  }
-  for (const value of grades) {
-    if (typeof value !== 'number' || Number.isNaN(value)) {
-      throw new TypeError('Invalid input')
-    }
-  }
-  const sum = grades.reduce((acc, sum) => acc + sum, 0)
-  const average = sum / grades.length
-  return Math.round(average * 10) / 10
+  // Write your code heres
+  return Math.round(computeAverage(grades) * 10) / 10
 }
