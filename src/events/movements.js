@@ -61,8 +61,7 @@ export function hoverFocusAndBlur() {
 export function changesOnInputEvents() {
   const input = document.querySelector('#focus-me')
   const defaultColor = 'rgb(100, 149, 237)'
-  let currentDefaultColor = defaultColor 
-
+  let currentDefaultColor = defaultColor
 
   input.style.borderColor = currentDefaultColor
 
@@ -73,7 +72,7 @@ export function changesOnInputEvents() {
 
   input.addEventListener('input', () => {
     const newDefaultColor = randomRGB()
-    currentDefaultColor = newDefaultColor 
+    currentDefaultColor = newDefaultColor
 
     labels.forEach((label) => {
       label.style.color = newDefaultColor
@@ -84,4 +83,3 @@ export function changesOnInputEvents() {
     input.style.borderColor = currentDefaultColor
   })
 }
-

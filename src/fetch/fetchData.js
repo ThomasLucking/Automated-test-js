@@ -7,4 +7,14 @@
  */
 export function fetchDataOnClick() {
   // Write your code here
+  const button = document.querySelector('#click-to-fetch')
+  const display = document.querySelector('#display-here')
+  button.addEventListener('click', () => {
+    fetch('https://api.github.com/octocat') // makes an HTTPS request to the server
+      .then((response) => response.text()) // transforms it into text
+      .then((data) => {
+        // then using a callback to display the fetched data inside the <pre> element
+        display.textContent = data
+      })
+  })
 }
